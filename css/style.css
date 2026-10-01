@@ -93,6 +93,7 @@ a:focus-visible {
 
 .button:hover {
   background-color: var(--color-primary-dark);
+  color: var(--color-white);
 }
 
 .button:focus-visible {
