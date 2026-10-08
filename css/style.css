@@ -288,7 +288,6 @@ section h2 {
   list-style: none;
 }
 
-
 /*
   Добавляем расстояние между пунктами меню.
 */
@@ -307,4 +306,29 @@ section h2 {
 .site-nav__list a:hover {
   color: var(--color-white);
   background-color: var(--color-primary);
+}
+
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+}
+
+.breadcrumbs span::before {
+  content: " / ";
+  color: var(--color-muted);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
 }
