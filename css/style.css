@@ -3,7 +3,7 @@
    =============================== */
 
 :root {
-  /* Основные цвета проекта */
+  /* Основные цвета */
   --color-bg: #ffffff;
   --color-text: #222222;
   --color-muted: #666666;
@@ -16,6 +16,7 @@
   --color-success: #168a2f;
   --color-success-bg: #eefaf0;
   --color-white: #ffffff;
+  --color-focus: #0057b8;
 
   /* Отступы */
   --space-xs: 4px;
@@ -31,7 +32,8 @@
 
   /* Размеры */
   --container-width: 1100px;
-  --header-height: 150px;
+  --header-height: 200px;
+  --z-scroll-top: 900;
 }
 
 /* ===============================
@@ -40,6 +42,11 @@
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -57,18 +64,23 @@ footer {
 }
 
 header {
-  background-color: var(--color-surface);
   position: sticky;
-  z-index: 1000;
   top: 0;
+  z-index: 1000;
+  background-color: var(--color-surface);
 }
 
 footer {
   background-color: var(--color-surface);
 }
 
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
+}
+
 /* ===============================
-   3. Общие элементы интерфейса
+   3. Ссылки
    =============================== */
 
 a {
@@ -83,6 +95,10 @@ a:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
 }
+
+/* ===============================
+   4. Кнопки
+   =============================== */
 
 .button {
   display: inline-block;
@@ -126,7 +142,7 @@ a:focus-visible {
 }
 
 /* ===============================
-   4. Компоненты страницы
+   5. Общие секции и контейнеры
    =============================== */
 
 .hero {
@@ -142,9 +158,26 @@ a:focus-visible {
   margin: 0 auto var(--space-xl);
 }
 
-.section h2 {
+section {
+  margin-bottom: var(--space-lg);
+}
+
+.section h2,
+section h2 {
   margin-top: 0;
 }
+
+.aside-info {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+  padding: var(--space-md);
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-surface);
+}
+
+/* ===============================
+   6. Сетка товаров и карточки
+   =============================== */
 
 .products-grid {
   display: grid;
@@ -198,26 +231,8 @@ a:focus-visible {
   align-self: flex-start;
 }
 
-
-
-section {
-  margin-bottom: 24px;
-}
-
-section h2 {
-  margin-top: 0;
-}
-
-.aside-info {
-  max-width: var(--container-width);
-  margin: 0 auto var(--space-xl);
-  padding: var(--space-md);
-  border-left: 4px solid var(--color-primary);
-  background-color: var(--color-surface);
-}
-
 /* ===============================
-   5. Форма и модальное окно
+   7. Формы и модальное окно
    =============================== */
 
 .order-dialog {
@@ -235,55 +250,20 @@ section h2 {
   margin-top: 0;
 }
 
-.order-form__field {
+.order-form__field,
+.form-field {
   margin-bottom: var(--space-md);
 }
 
-.order-form__label {
+.order-form__label,
+.form-field label {
   display: block;
   margin-bottom: var(--space-xs);
 }
 
 .order-form__input,
 .order-form__select,
-.order-form__textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  font: inherit;
-}
-
-.order-form__input:hover,
-.order-form__select:hover,
-.order-form__textarea:hover {
-  border-color: var(--color-primary);
-}
-
-.order-form__input:focus-visible,
-.order-form__select:focus-visible,
-.order-form__textarea:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
-}
-
-.order-form__actions {
-  display: flex;
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
-}
-
-
-
-.form-field {
-  margin-bottom: var(--space-md);
-}
-
-.form-field label {
-  display: block;
-  margin-bottom: var(--space-xs);
-}
-
+.order-form__textarea,
 .form-field input,
 .form-field select,
 .form-field textarea {
@@ -304,12 +284,18 @@ section h2 {
   color: var(--color-muted);
 }
 
+.order-form__input:hover,
+.order-form__select:hover,
+.order-form__textarea:hover,
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
   border-color: var(--color-primary);
 }
 
+.order-form__input:focus-visible,
+.order-form__select:focus-visible,
+.order-form__textarea:focus-visible,
 .form-field input:focus-visible,
 .form-field select:focus-visible,
 .form-field textarea:focus-visible,
@@ -322,6 +308,18 @@ section h2 {
   border-color: var(--color-danger);
 }
 
+.order-form__actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
 .success-message {
   max-width: var(--container-width);
   margin: var(--space-lg) auto;
@@ -330,16 +328,9 @@ section h2 {
   background-color: var(--color-success-bg);
 }
 
-/*
-  Кнопки формы.
-*/
-.form-actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-
+/* ===============================
+   8. Шапка сайта и навигация
+   =============================== */
 
 .site-header {
   background-color: var(--color-surface);
@@ -391,7 +382,9 @@ section h2 {
   background-color: var(--color-primary);
 }
 
-
+/* ===============================
+   9. Хлебные крошки
+   =============================== */
 
 .breadcrumbs {
   max-width: var(--container-width);
@@ -409,64 +402,270 @@ section h2 {
   color: var(--color-muted);
 }
 
-
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--header-height);
-}
-
-:target {
-  outline: 2px dashed var(--color-primary);
-  outline-offset: 4px;
-}
+/* ===============================
+   10. Каталог и фильтры
+   =============================== */
 
 .catalog-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
+}
+
+.catalog__filters {
+  align-self: start;
+}
+
+.catalog__products {
+  min-width: 0;
+}
+
+.filters_sticky {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-md));
+  max-height: calc(100vh - var(--header-height) - var(--space-lg) * 2);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.filters__title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.filters__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filters__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.filters__legend {
+  padding: 0;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.filters__option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.filters__range {
+  display: flex;
+  gap: 8px;
+}
+
+.filters__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.filters__input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  font: inherit;
+  color: var(--color-text);
+}
+
+.filters__input:hover {
+  border-color: var(--color-primary);
+}
+
+.filters__input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.filters__submit {
+  align-self: start;
+}
+
+/* ===============================
+   11. Отзывы
+   =============================== */
+
+.reviews-grid {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  grid-template-areas: "filters products";
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
 }
 
-.catalog-filters {
-  grid-area: filters;
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-surface);
 }
 
-.catalog-products {
-  grid-area: products;
+.review-card__text {
+  margin: 0;
+  color: var(--color-text);
 }
 
-.filters-form {
-  display: grid;
+.review-card__author {
+  margin: 0;
+  margin-top: auto;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+/* ===============================
+   12. FAQ
+   =============================== */
+
+.faq {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-md);
 }
 
-.filters-form fieldset {
-  margin: 0;
+.faq__item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  overflow: hidden;
+}
+
+.faq__question {
+  position: relative;
   padding: var(--space-md);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  padding-right: 48px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
 }
 
-.filters-form legend {
-  font-weight: 700;
+.faq__question::-webkit-details-marker {
+  display: none;
 }
 
-.filters-form label {
-  display: block;
-  margin-bottom: var(--space-sm);
+.faq__question::after {
+  content: "+";
+  position: absolute;
+  right: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  line-height: 1;
+  color: var(--color-primary);
 }
 
-.filters-form input[type="number"] {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  font: inherit;
+.faq__item[open] .faq__question::after {
+  content: "−";
+}
+
+.faq__question:hover {
+  color: var(--color-primary);
+}
+
+.faq__question:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.faq__answer {
+  margin: 0;
+  padding: 0 var(--space-md) var(--space-md);
+  color: var(--color-muted);
+}
+
+/* ===============================
+   13. Кнопка «наверх»
+   =============================== */
+
+.scroll-top {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: var(--z-scroll-top);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-surface);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.15);
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.scroll-top__icon {
+  width: 24px;
+  height: 24px;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.scroll-top_visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-top:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* ===============================
+   14. Адаптив
+   =============================== */
+
+@media (max-width: 900px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
 }

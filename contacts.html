@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Контактная информация учебного интернет-магазина.">
   <title>Контакты — Учебный интернет-магазин</title>
+  <meta name="description" content="Контактная информация учебного интернет-магазина.">
+
   <link rel="stylesheet" href="css/style.css">
+
   <meta property="og:type" content="website">
   <meta property="og:title" content="Учебный интернет-магазин">
   <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
   <meta property="og:image" content="https://razen-mirea.github.io/kr1-html-css-shop/images/preview.jpg">
+  <meta property="og:url" content="https://razen-mirea.github.io/kr1-html-css-shop/contacts.html">
 </head>
 <body>
   <header class="site-header">
@@ -19,30 +22,18 @@
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="index.html">
-              Главная
-            </a>
+            <a class="site-nav__link" href="index.html">Главная</a>
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="catalog.html">Каталог</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">Контакты</a>
+            <a class="site-nav__link site-nav__link--active"
+               href="contacts.html"
+               aria-current="page">Контакты</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#advantages">
-              Преимущество
-            </a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">
-              Популярные товары
-            </a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">
-              Обратная связь
-            </a>
+            <a class="site-nav__link" href="index.html#order-dialog">Обратная связь</a>
           </li>
         </ul>
       </nav>
@@ -61,9 +52,9 @@
         Здесь размещается контактная информация учебного интернет-магазина.
       </p>
 
-      <ul>
-        <li>Телефон: +7 (900) 000-00-00</li>
-        <li>E-mail: info@example.com</li>
+      <ul class="contacts-list">
+        <li>Телефон: <a href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+        <li>E-mail: <a href="mailto:info@example.com">info@example.com</a></li>
         <li>Адрес: г. Москва, учебный проект</li>
       </ul>
     </section>
@@ -73,7 +64,8 @@
       <p>
         Для отправки заявки используйте форму в модальном окне на главной странице.
       </p>
-      <a class="button" href="index.html#contacts">Перейти к форме</a>
+      <!-- ИСПРАВЛЕНО: добавлен модификатор кнопки, иначе кнопка без фона/рамки -->
+      <a class="button button--primary" href="index.html#order">Перейти к форме</a>
     </section>
   </main>
 
@@ -81,5 +73,11 @@
     <p>&copy; 2026 Учебный проект. Все права защищены.</p>
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
+
+  <button class="scroll-top" type="button" aria-label="Наверх">
+    <span class="scroll-top__icon" aria-hidden="true"></span>
+  </button>
+
+  <script src="js/scroll-top.js" defer></script>
 </body>
 </html>

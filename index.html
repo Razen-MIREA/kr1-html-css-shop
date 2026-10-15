@@ -4,77 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Учебный интернет-магазин</title>
+  <meta name="description" content="Учебный frontend-проект интернет-магазина: каталог, карточки товаров, форма заявки.">
+
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+
   <meta property="og:type" content="website">
   <meta property="og:title" content="Учебный интернет-магазин">
   <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
   <meta property="og:image" content="https://razen-mirea.github.io/kr1-html-css-shop/images/preview.jpg">
+
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
   <header class="site-header">
-  <div class="site-header__inner">
-    <a class="site-header__logo" href="index.html">ShopProject</a>
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
 
-    <nav class="site-nav" aria-label="Основная навигация">
-      <ul class="site-nav__list">
-        <li class="site-nav__item">
-          <a class="site-nav__link site-nav__link--active" href="index.html">
-            Главная
-          </a>
-        </li>
-        <li class="site-nav__item">
-          <a class="site-nav__link" href="catalog.html">Каталог</a>
-        </li>
-        <li class="site-nav__item">
-          <a class="site-nav__link" href="contacts.html">Контакты</a>
-        </li>
-        <li class="site-nav__item">
-          <a class="site-nav__link" href="index.html#popular">
-            Популярные товары
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-
-  </div>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section tabindex="0" class="hero">
+    <section class="hero">
       <h1>Учебный интернет-магазин</h1>
       <p>
         Это стартовая страница учебного frontend-проекта.
         В дальнейшем на её основе будет разработан многостраничный сайт
         интернет-магазина или каталога услуг.
       </p>
-      <a tabindex="0" class="button button--secondary" href="#popular">Перейти к товарам</a>
+      <a class="button button--secondary" href="#popular">Перейти к товарам</a>
     </section>
 
-    <section>
-        <h2>О проекте</h2>
-        <p>
-            В рамках данного проекта будет разработан многостраничный сайт
-            интернет-магазина или каталога услуг. Проект будет постепенно
-            расширяться на следующих практических занятиях.
-        </p>
+    <section class="section">
+      <h2>О проекте</h2>
+      <p>
+        В рамках данного проекта будет разработан многостраничный сайт
+        интернет-магазина или каталога услуг. Проект будет постепенно
+        расширяться на следующих практических занятиях.
+      </p>
     </section>
-    
-    <section tabindex="0" class="section" id="advantages">
+
+    <section class="section" id="advantages">
       <h2>Преимущества проекта</h2>
 
-      <ul tabindex="0" class="advantages-list">
+      <ul class="advantages-list">
         <li>понятная HTML-структура;</li>
         <li>семантические блоки страницы;</li>
         <li>подключение внешнего CSS-файла;</li>
         <li>подготовка к разработке многостраничного сайта.</li>
       </ul>
     </section>
-    
+
     <section class="section" id="popular">
       <h2>Популярные товары</h2>
 
@@ -83,7 +82,11 @@
           <h3 class="product-card__title">Товар 1</h3>
           <p class="product-card__description">Краткое описание товара.</p>
           <p class="product-card__price">Цена: 1000 руб.</p>
-          <button class="button product-card__button button--primary" type="button" data-product="Товар 1">
+          <button
+            class="button button--primary product-card__button"
+            type="button"
+            data-product="Товар 1"
+          >
             Заказать
           </button>
         </article>
@@ -92,7 +95,11 @@
           <h3 class="product-card__title">Товар 2</h3>
           <p class="product-card__description">Краткое описание товара.</p>
           <p class="product-card__price">Цена: 1500 руб.</p>
-          <button class="button product-card__button button--primary" type="button" data-product="Товар 2">
+          <button
+            class="button button--primary product-card__button"
+            type="button"
+            data-product="Товар 2"
+          >
             Заказать
           </button>
         </article>
@@ -101,15 +108,60 @@
           <h3 class="product-card__title">Товар 3</h3>
           <p class="product-card__description">Краткое описание товара.</p>
           <p class="product-card__price">Цена: 2000 руб.</p>
-          <button class="button product-card__button button--primary" type="button" data-product="Товар 3">
+          <button
+            class="button button--primary product-card__button"
+            type="button"
+            data-product="Товар 3"
+          >
             Заказать
           </button>
         </article>
       </div>
     </section>
 
-    
-    <aside tabindex="0" class="aside-info">
+    <section class="section" id="reviews">
+      <h2>Отзывы наших клиентов</h2>
+
+      <div class="reviews-grid">
+        <article class="review-card">
+          <p class="review-card__text">Отличный магазин! Быстрая доставка, товар соответствует описанию.</p>
+          <p class="review-card__author">— Анна</p>
+        </article>
+        <article class="review-card">
+          <p class="review-card__text">Заказывал здесь уже несколько раз, всегда всё чётко. Рекомендую!</p>
+          <p class="review-card__author">— Дмитрий</p>
+        </article>
+        <article class="review-card">
+          <p class="review-card__text">Приятные цены и вежливые менеджеры. Буду обращаться ещё.</p>
+          <p class="review-card__author">— Елена</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <h2>Часто задаваемые вопросы</h2>
+
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__question">Как оформить заказ?</summary>
+          <p class="faq__answer">Выберите товар в каталоге и нажмите кнопку «Заказать». Заполните форму, укажите контактные данные и отправьте заявку.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Какие способы оплаты вы принимаете?</summary>
+          <p class="faq__answer">Мы принимаем оплату банковскими картами, а также наличными при получении.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Сколько стоит доставка?</summary>
+          <p class="faq__answer">Доставка по городу — 300 руб. При заказе от 5000 руб. доставка бесплатная.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Можно ли вернуть товар?</summary>
+          <p class="faq__answer">Да, в течение 14 дней с момента покупки, если товар не был в использовании и сохранена упаковка.</p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="aside-info">
       <h2>Информация для студентов</h2>
       <p>
         На следующих практических занятиях этот проект будет расширяться:
@@ -117,7 +169,6 @@
         БЭМ-структура и адаптивная версия сайта.
       </p>
     </aside>
-
   </main>
 
   <footer id="contacts">
@@ -125,10 +176,10 @@
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
 
-  <dialog tabindex="0" class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <h2 id="order-dialog-title">Оформление заявки</h2>
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
 
-    <form tabindex="0" class="order-form" id="order-form" action="#" method="post" novalidate>
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
       <input id="selected-product" name="selected-product" type="hidden">
 
       <div class="order-form__field">
@@ -138,6 +189,7 @@
           id="order-name"
           name="name"
           type="text"
+          autocomplete="name"
           required
         >
       </div>
@@ -149,25 +201,28 @@
           id="order-email"
           name="email"
           type="email"
+          autocomplete="email"
           required
         >
       </div>
 
       <div class="order-form__field">
-        <label class="order-form__label" for="order-email">Телефон</label>
+        <!-- ИСПРАВЛЕНО: for="order-phone" вместо order-email -->
+        <label class="order-form__label" for="order-phone">Телефон</label>
         <input
           class="order-form__input"
           id="order-phone"
           name="phone"
           type="tel"
           inputmode="tel"
+          autocomplete="tel"
           placeholder="+7 (900) 000-00-00"
           pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
           required
         >
       </div>
 
-      <div tabindex="0" class="form-field">
+      <div class="form-field">
         <label for="order-date">Дата связи</label>
         <input
           class="order-form__input"
@@ -177,7 +232,7 @@
         >
       </div>
 
-      <div tabindex="0" class="form-field">
+      <div class="form-field">
         <label for="order-topic">Тема заявки</label>
         <select id="order-topic" name="topic" required>
           <option value="">Выберите тему</option>
@@ -187,7 +242,7 @@
         </select>
       </div>
 
-      <div tabindex="0" class="form-field">
+      <div class="form-field">
         <label for="order-comment">Комментарий</label>
         <textarea
           class="order-form__input"
@@ -198,10 +253,9 @@
         ></textarea>
       </div>
 
-      <div tabindex="0" class="form-field form-field--checkbox" id="checkbox-order-dialog">
+      <div class="form-field form-field--checkbox">
         <label>
           <input
-            class="order-form__input"
             id="order-agreement"
             name="agreement"
             type="checkbox"
@@ -221,9 +275,17 @@
       </div>
     </form>
   </dialog>
+  
+  <button class="scroll-top" type="button" aria-label="Наверх">
+    <span class="scroll-top__icon" aria-hidden="true"></span>
+  </button>
 
-  <p tabindex="0" class="success-message" id="success-message" hidden>
+  <p class="success-message" id="success-message" role="status" aria-live="polite" hidden>
     Форма успешно отправлена!
   </p>
+
+  <!-- ИСПРАВЛЕНО: единый относительный путь к скриптам -->
+  <script src="js/faq.js" defer></script>
+  <script src="js/scroll-top.js" defer></script>
 </body>
 </html>

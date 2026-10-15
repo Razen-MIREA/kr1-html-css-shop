@@ -54,3 +54,20 @@ orderForm.addEventListener('submit', (event) => {
   submitDialogButton.disabled = true; // если нужно снова
   orderDialog.close();
 });
+
+
+
+const faqList = document.querySelector('.faq__list');
+
+faqList?.addEventListener('click', (event) => {
+  const trigger = event.target.closest('.faq-item__trigger');
+  if (!trigger) return;
+
+  const item = trigger.closest('.faq-item');
+  const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+  const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+  trigger.setAttribute('aria-expanded', String(!isOpen));
+  item.classList.toggle('faq-item_open', !isOpen);
+  panel.hidden = isOpen;
+});
