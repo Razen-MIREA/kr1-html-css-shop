@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Смартфон Aurora X1 — Учебный интернет-магазин</title>
+  <meta name="description" content="Подробная информация о смартфоне Aurora X1.">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Смартфон Aurora X1 — Учебный интернет-магазин">
+  <meta property="og:description" content="Сбалансированный смартфон для повседневных задач.">
+  <meta property="og:image" content="https://picsum.photos/seed/aurora-x1/1200/900">
+
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current" id="product-breadcrumb">Смартфон Aurora X1</span>
+    </nav>
+
+    <article class="product-page">
+      <div class="product-page__media">
+        <img
+          class="product-page__image"
+          id="product-image"
+          src="images/products/aurora-x1.jpg"
+          alt="Смартфон Aurora X1"
+          data-fallback-name="Смартфон Aurora X1"
+          width="800"
+          height="600"
+          decoding="async"
+        >
+      </div>
+
+      <div class="product-page__info">
+        <h1 class="product-page__title" id="product-title">Смартфон Aurora X1</h1>
+        <p class="product-page__specs-inline" id="product-specs">6.5" AMOLED · 8/128 ГБ · 5000 мА·ч</p>
+        <p class="product-page__price" id="product-price">1 000 руб.</p>
+        <p class="product-page__description" id="product-description">
+          Сбалансированный смартфон для повседневных задач и мультимедиа:
+          яркий AMOLED-экран, ёмкий аккумулятор и быстрая зарядка.
+        </p>
+
+        <div class="product-page__actions">
+          <button
+            class="button button--primary"
+            id="product-order-button"
+            type="button"
+            data-product="Смартфон Aurora X1"
+          >
+            Заказать
+          </button>
+          <a class="button button--secondary" href="catalog.html">
+            Назад в каталог
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <script src="js/product-page.js" defer></script>
+    <script src="js/product-images.js" defer></script>
+    <script src="js/scroll-top.js" defer></script>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <button class="order-dialog__close" type="button" id="close-order-dialog-x" aria-label="Закрыть окно">
+      <span aria-hidden="true">×</span>
+    </button>
+
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="selected-product" type="hidden">
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-name">Имя</label>
+        <input class="order-form__input" id="order-name" name="name" type="text"
+          autocomplete="name" placeholder="Укажите имя"
+          aria-describedby="order-name-error" aria-invalid="false" required>
+        <p class="order-form__error" id="order-name-error" role="alert" hidden></p>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-email">E-mail</label>
+        <input class="order-form__input" id="order-email" name="email" type="email"
+          autocomplete="email" placeholder="Укажите электронную почту"
+          aria-describedby="order-email-error" aria-invalid="false" required>
+        <p class="order-form__error" id="order-email-error" role="alert" hidden></p>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-phone">Телефон</label>
+        <input class="order-form__input" id="order-phone" name="phone" type="tel"
+          inputmode="tel" autocomplete="tel" placeholder="+7 (900) 000-00-00"
+          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+          aria-describedby="order-phone-error" aria-invalid="false" required>
+        <p class="order-form__error" id="order-phone-error" role="alert" hidden></p>
+      </div>
+
+      <div class="form-field">
+        <label for="order-date">Дата связи</label>
+        <input class="order-form__input" id="order-date" name="date" type="date">
+      </div>
+
+      <div class="form-field">
+        <label for="order-topic">Тема заявки</label>
+        <select id="order-topic" name="topic"
+          aria-describedby="order-topic-error" aria-invalid="false" required>
+          <option value="">Выберите тему</option>
+          <option value="product">Заказ товара</option>
+          <option value="consultation">Консультация</option>
+          <option value="delivery">Доставка</option>
+        </select>
+        <p class="order-form__error" id="order-topic-error" role="alert" hidden></p>
+      </div>
+
+      <div class="form-field">
+        <label for="order-comment">Комментарий</label>
+        <textarea class="order-form__input" id="order-comment" name="comment"
+          rows="4" placeholder="Укажите дополнительную информацию"></textarea>
+      </div>
+
+      <div class="form-field form-field--checkbox">
+        <label>
+          <input id="checkbox-order-dialog" name="agreement" type="checkbox"
+            aria-describedby="checkbox-order-dialog-error" aria-invalid="false" required>
+          Я согласен на обработку данных
+        </label>
+        <p class="order-form__error" id="checkbox-order-dialog-error" role="alert" hidden></p>
+      </div>
+
+      <div class="order-form__actions">
+        <button class="button button--ghost" type="button" id="clear-order-form">Очистить всё</button>
+        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+        <button class="button button--primary" type="submit" id="submit-order-dialog">Отправить заявку</button>
+      </div>
+    </form>
+  </dialog>
+
+  <button class="scroll-top" type="button" aria-label="Наверх">
+    <span class="scroll-top__icon" aria-hidden="true"></span>
+  </button>
+
+  <p class="success-message" id="success-message" role="status" aria-live="polite" hidden>
+    Форма успешно отправлена!
+  </p>
+
+  <script src="js/scroll-top.js" defer></script>
+</body>
+</html>
