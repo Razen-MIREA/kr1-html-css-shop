@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты — Учебный интернет-магазин</title>
-  <meta name="description" content="Контактная информация учебного интернет-магазина.">
+  <meta name="description" content="Контактная информация учебного интернет-магазина: телефон, e-mail, адрес, режим работы.">
 
   <link rel="stylesheet" href="css/style.css">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+  <meta property="og:title" content="Контакты — Учебный интернет-магазин">
+  <meta property="og:description" content="Контактная информация учебного интернет-магазина.">
   <meta property="og:image" content="https://razen-mirea.github.io/kr1-html-css-shop/images/preview.jpg">
   <meta property="og:url" content="https://razen-mirea.github.io/kr1-html-css-shop/contacts.html">
+
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -33,7 +35,7 @@
                aria-current="page">Контакты</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#order-dialog">Обратная связь</a>
+            <a class="site-nav__link" href="#feedback">Обратная связь</a>
           </li>
         </ul>
       </nav>
@@ -49,23 +51,71 @@
     <section class="section">
       <h1>Контакты</h1>
       <p>
-        Здесь размещается контактная информация учебного интернет-магазина.
+        Свяжитесь с нами удобным способом — ответим в рабочее время.
       </p>
 
-      <ul class="contacts-list">
-        <li>Телефон: <a href="tel:+79000000000">+7 (900) 000-00-00</a></li>
-        <li>E-mail: <a href="mailto:info@example.com">info@example.com</a></li>
-        <li>Адрес: г. Москва, учебный проект</li>
-      </ul>
+      <div class="contact-cards">
+        <article class="contact-card">
+          <h2 class="contact-card__title">Телефон</h2>
+          <p class="contact-card__value">
+            <a href="tel:+79000000000">+7 (900) 000-00-00</a>
+          </p>
+          <p class="contact-card__note">Пн–Пт, 9:00–19:00</p>
+        </article>
+
+        <article class="contact-card">
+          <h2 class="contact-card__title">E-mail</h2>
+          <p class="contact-card__value">
+            <a href="mailto:info@example.com">info@example.com</a>
+          </p>
+          <p class="contact-card__note">Отвечаем в течение рабочего дня</p>
+        </article>
+
+        <article class="contact-card">
+          <h2 class="contact-card__title">Адрес</h2>
+          <p class="contact-card__value">г. Москва, учебный проект</p>
+          <p class="contact-card__note">Самовывоз по договорённости</p>
+        </article>
+
+        <article class="contact-card">
+          <h2 class="contact-card__title">Режим работы</h2>
+          <p class="contact-card__value">Пн–Пт: 9:00–19:00</p>
+          <p class="contact-card__note">Сб–Вс: выходной</p>
+        </article>
+      </div>
     </section>
 
     <section class="section" id="feedback">
       <h2>Обратная связь</h2>
       <p>
-        Для отправки заявки используйте форму в модальном окне на главной странице.
+        Оставьте заявку — мы свяжемся с вами и ответим на вопросы
+        о товарах, доставке и оплате.
       </p>
-      <!-- ИСПРАВЛЕНО: добавлен модификатор кнопки, иначе кнопка без фона/рамки -->
-      <a class="button button--primary" href="index.html#order">Перейти к форме</a>
+
+      <div class="feedback-actions">
+        <button
+          class="button button--primary"
+          type="button"
+          data-product="Обратная связь"
+        >
+          Оставить заявку
+        </button>
+        <a class="button button--secondary" href="catalog.html#catalog">
+          Перейти в каталог
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Реквизиты</h2>
+      <dl class="contacts-requisites">
+        <dt>Наименование</dt>
+        <dd>Учебный проект «ShopProject»</dd>
+        <dt>ИНН</dt>
+        <dd>0000000000</dd>
+        <dt>ОГРН</dt>
+        <dd>0000000000000</dd>
+      </dl>
     </section>
   </main>
 
@@ -74,9 +124,140 @@
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
 
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <button
+      class="order-dialog__close"
+      type="button"
+      id="close-order-dialog-x"
+      aria-label="Закрыть окно"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="selected-product" type="hidden">
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-name">Имя</label>
+        <input
+          class="order-form__input"
+          id="order-name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          placeholder="Укажите имя"
+          aria-describedby="order-name-error"
+          aria-invalid="false"
+          required
+        >
+        <p class="order-form__error" id="order-name-error" role="alert" hidden></p>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-email">E-mail</label>
+        <input
+          class="order-form__input"
+          id="order-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder="Укажите электронную почту"
+          aria-describedby="order-email-error"
+          aria-invalid="false"
+          required
+        >
+        <p class="order-form__error" id="order-email-error" role="alert" hidden></p>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-phone">Телефон</label>
+        <input
+          class="order-form__input"
+          id="order-phone"
+          name="phone"
+          type="tel"
+          inputmode="tel"
+          autocomplete="tel"
+          placeholder="+7 (900) 000-00-00"
+          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+          aria-describedby="order-phone-error"
+          aria-invalid="false"
+          required
+        >
+        <p class="order-form__error" id="order-phone-error" role="alert" hidden></p>
+      </div>
+
+      <div class="form-field">
+        <label for="order-date">Дата связи</label>
+        <input class="order-form__input" id="order-date" name="date" type="date">
+      </div>
+
+      <div class="form-field">
+        <label for="order-topic">Тема заявки</label>
+        <select
+          id="order-topic"
+          name="topic"
+          aria-describedby="order-topic-error"
+          aria-invalid="false"
+          required
+        >
+          <option value="">Выберите тему</option>
+          <option value="product">Заказ товара</option>
+          <option value="consultation">Консультация</option>
+          <option value="delivery">Доставка</option>
+        </select>
+        <p class="order-form__error" id="order-topic-error" role="alert" hidden></p>
+      </div>
+
+      <div class="form-field">
+        <label for="order-comment">Комментарий</label>
+        <textarea
+          class="order-form__input"
+          id="order-comment"
+          name="comment"
+          rows="4"
+          placeholder="Укажите дополнительную информацию"
+        ></textarea>
+      </div>
+
+      <div class="form-field form-field--checkbox">
+        <label>
+          <input
+            id="checkbox-order-dialog"
+            name="agreement"
+            type="checkbox"
+            aria-describedby="checkbox-order-dialog-error"
+            aria-invalid="false"
+            required
+          >
+          Я согласен на обработку данных
+        </label>
+        <p class="order-form__error" id="checkbox-order-dialog-error" role="alert" hidden></p>
+      </div>
+
+      <div class="order-form__actions">
+        <button class="button button--ghost" type="button" id="clear-order-form">
+          Очистить всё
+        </button>
+        <button class="button button--secondary" type="button" id="close-order-dialog">
+          Закрыть
+        </button>
+        <button class="button button--primary" type="submit" id="submit-order-dialog">
+          Отправить заявку
+        </button>
+      </div>
+    </form>
+  </dialog>
+
   <button class="scroll-top" type="button" aria-label="Наверх">
     <span class="scroll-top__icon" aria-hidden="true"></span>
   </button>
+
+  <p class="success-message" id="success-message" role="status" aria-live="polite" hidden>
+    Форма успешно отправлена!
+  </p>
 
   <script src="js/scroll-top.js" defer></script>
 </body>

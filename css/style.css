@@ -231,6 +231,42 @@ section h2 {
   align-self: flex-start;
 }
 
+.product-card {
+  overflow: hidden;      /* скругляет углы у картинки вместе с карточкой */
+}
+
+.product-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;   /* резервирует место до загрузки — нет «дёрганья» */
+  background: var(--color-surface); /* подложка, пока картинка грузится */
+  overflow: hidden;
+}
+
+.product-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* не искажает пропорции */
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.04);
+}
+
+.product-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: auto;      /* кнопки прижаты к низу карточки */
+}
+
+.product-card__actions .button {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
 /* ===============================
    7. Формы и модальное окно
    =============================== */
@@ -667,5 +703,192 @@ section h2 {
 @media (max-width: 600px) {
   .reviews-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+.review-card__rating {
+  margin: 0 0 4px;
+  color: #0057b8;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.review-card__product {
+  margin: 0;
+  font-size: 13px;
+  color: #888;
+}
+
+.review-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  color: #666;
+}
+
+.review-card__meta .review-card__author {
+  margin: 0;
+  font-weight: 600;
+  color: #222;
+}
+
+.review-card__meta .review-card__date {
+  margin: 0;
+}
+
+/* --- Кнопка-крестик в углу диалога --- */
+.order-dialog {
+  position: relative;
+}
+
+.order-dialog__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #666;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.order-dialog__close:hover,
+.order-dialog__close:focus-visible {
+  background: #f0f0f0;
+  color: #000;
+}
+
+/* --- Кнопка "Очистить всё" --- */
+.button--ghost {
+  background: transparent;
+  border: 1px solid #ccc;
+  color: #555;
+}
+
+.button--ghost:hover {
+  background: #f5f5f5;
+  color: #222;
+}
+
+/* --- Подсказки об ошибках --- */
+.order-form__error {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.3;
+  color: #d32f2f;
+}
+
+.order-form__error[hidden] {
+  display: none;
+}
+
+/* Красная рамка у невалидного поля */
+.order-form__input[aria-invalid="true"],
+#order-topic[aria-invalid="true"] {
+  border-color: #d32f2f;
+  outline-color: #d32f2f;
+}
+
+.form-field--checkbox input[aria-invalid="true"] {
+  outline: 2px solid #d32f2f;
+  outline-offset: 2px;
+}
+
+/* */
+/* --- Контакты: карточки --- */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.contact-card {
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.contact-card__title {
+  margin: 0 0 var(--space-sm);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+}
+
+.contact-card__value {
+  margin: 0 0 var(--space-xs);
+  font-size: 18px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.contact-card__value a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.contact-card__value a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.contact-card__note {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+/* --- Обратная связь: кнопки --- */
+.feedback-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+/* --- Реквизиты --- */
+.contacts-requisites {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-sm) var(--space-lg);
+  margin: 0;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.contacts-requisites dt {
+  color: var(--color-muted);
+}
+
+.contacts-requisites dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .contacts-requisites {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts-requisites dt {
+    font-size: 13px;
   }
 }

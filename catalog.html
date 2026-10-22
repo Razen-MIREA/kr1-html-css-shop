@@ -13,6 +13,8 @@
   <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
   <meta property="og:image" content="https://razen-mirea.github.io/kr1-html-css-shop/images/preview.jpg">
   <meta property="og:url" content="https://razen-mirea.github.io/kr1-html-css-shop/catalog.html">
+
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -60,7 +62,6 @@
       >
         <h2 class="filters__title">Фильтры</h2>
 
-        <!-- Форма-макет: отправка перехватывается JS в дальнейшем -->
         <form class="filters__form" action="#" method="get">
           <fieldset class="filters__group">
             <legend class="filters__legend">Категория</legend>
@@ -135,7 +136,7 @@
         </form>
       </aside>
 
-      <section class="catalog__products" aria-labelledby="catalog-products-title">
+      <section class="catalog__products" id="catalog" aria-labelledby="catalog-products-title">
         <h2 id="catalog-products-title">Список товаров</h2>
 
         <div class="products-grid">
@@ -143,63 +144,117 @@
             <h3 class="product-card__title">Смартфон Aurora X1</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">Цена: 1000 руб.</p>
-            <a class="button button--secondary product-card__button" href="index.html#popular">Подробнее</a>
+            <button
+              class="button button--primary product-card__button"
+              type="button"
+              data-product="Смартфон Aurora X1"
+            >
+              Заказать
+            </button>
           </article>
 
           <article class="product-card">
             <h3 class="product-card__title">Наушники Sonic Pro</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">Цена: 1500 руб.</p>
-            <a class="button button--secondary product-card__button" href="index.html#popular">Подробнее</a>
+            <button
+              class="button button--primary product-card__button"
+              type="button"
+              data-product="Наушники Sonic Pro"
+            >
+              Заказать
+            </button>
           </article>
 
           <article class="product-card">
             <h3 class="product-card__title">Клавиатура Kliko 87</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">Цена: 2000 руб.</p>
-            <a class="button button--secondary product-card__button" href="index.html#popular">Подробнее</a>
+            <button
+              class="button button--primary product-card__button"
+              type="button"
+              data-product="Клавиатура Kliko 87"
+            >
+              Заказать
+            </button>
           </article>
 
           <article class="product-card">
             <h3 class="product-card__title">Мышь Glide Mini</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">Цена: 800 руб.</p>
-            <a class="button button--secondary product-card__button" href="index.html#popular">Подробнее</a>
+            <button
+              class="button button--primary product-card__button"
+              type="button"
+              data-product="Мышь Glide Mini"
+            >
+              Заказать
+            </button>
           </article>
 
           <article class="product-card">
             <h3 class="product-card__title">Монитор ViewMax 24"</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">Цена: 12000 руб.</p>
-            <a class="button button--secondary product-card__button" href="index.html#popular">Подробнее</a>
+            <button
+              class="button button--primary product-card__button"
+              type="button"
+              data-product='Монитор ViewMax 24"'
+            >
+              Заказать
+            </button>
           </article>
 
           <article class="product-card">
             <h3 class="product-card__title">Веб-камера ClearView</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">Цена: 3200 руб.</p>
-            <a class="button button--secondary product-card__button" href="index.html#popular">Подробнее</a>
+            <button
+              class="button button--primary product-card__button"
+              type="button"
+              data-product="Веб-камера ClearView"
+            >
+              Заказать
+            </button>
           </article>
 
           <article class="product-card">
             <h3 class="product-card__title">Колонка BoomBox S</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">Цена: 4500 руб.</p>
-            <a class="button button--secondary product-card__button" href="index.html#popular">Подробнее</a>
+            <button
+              class="button button--primary product-card__button"
+              type="button"
+              data-product="Колонка BoomBox S"
+            >
+              Заказать
+            </button>
           </article>
 
           <article class="product-card">
             <h3 class="product-card__title">Powerbank Volt 20000</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">Цена: 2700 руб.</p>
-            <a class="button button--secondary product-card__button" href="index.html#popular">Подробнее</a>
+            <button
+              class="button button--primary product-card__button"
+              type="button"
+              data-product="Powerbank Volt 20000"
+            >
+              Заказать
+            </button>
           </article>
 
           <article class="product-card">
             <h3 class="product-card__title">Чехол для смартфона</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">Цена: 600 руб.</p>
-            <a class="button button--secondary product-card__button" href="index.html#popular">Подробнее</a>
+            <button
+              class="button button--primary product-card__button"
+              type="button"
+              data-product="Чехол для смартфона"
+            >
+              Заказать
+            </button>
           </article>
         </div>
       </section>
@@ -211,10 +266,148 @@
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
 
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <button
+      class="order-dialog__close"
+      type="button"
+      id="close-order-dialog-x"
+      aria-label="Закрыть окно"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="selected-product" type="hidden">
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-name">Имя</label>
+        <input
+          class="order-form__input"
+          id="order-name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          placeholder="Укажите имя"
+          aria-describedby="order-name-error"
+          aria-invalid="false"
+          required
+        >
+        <p class="order-form__error" id="order-name-error" role="alert" hidden></p>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-email">E-mail</label>
+        <input
+          class="order-form__input"
+          id="order-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder="Укажите электронную почту"
+          aria-describedby="order-email-error"
+          aria-invalid="false"
+          required
+        >
+        <p class="order-form__error" id="order-email-error" role="alert" hidden></p>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-phone">Телефон</label>
+        <input
+          class="order-form__input"
+          id="order-phone"
+          name="phone"
+          type="tel"
+          inputmode="tel"
+          autocomplete="tel"
+          placeholder="+7 (900) 000-00-00"
+          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+          aria-describedby="order-phone-error"
+          aria-invalid="false"
+          required
+        >
+        <p class="order-form__error" id="order-phone-error" role="alert" hidden></p>
+      </div>
+
+      <div class="form-field">
+        <label for="order-date">Дата связи</label>
+        <input
+          class="order-form__input"
+          id="order-date"
+          name="date"
+          type="date"
+        >
+      </div>
+
+      <div class="form-field">
+        <label for="order-topic">Тема заявки</label>
+        <select
+          id="order-topic"
+          name="topic"
+          aria-describedby="order-topic-error"
+          aria-invalid="false"
+          required
+        >
+          <option value="">Выберите тему</option>
+          <option value="product">Заказ товара</option>
+          <option value="consultation">Консультация</option>
+          <option value="delivery">Доставка</option>
+        </select>
+        <p class="order-form__error" id="order-topic-error" role="alert" hidden></p>
+      </div>
+
+      <div class="form-field">
+        <label for="order-comment">Комментарий</label>
+        <textarea
+          class="order-form__input"
+          id="order-comment"
+          name="comment"
+          rows="4"
+          placeholder="Укажите дополнительную информацию"
+        ></textarea>
+      </div>
+
+      <div class="form-field form-field--checkbox">
+        <label>
+          <input
+            id="checkbox-order-dialog"
+            name="agreement"
+            type="checkbox"
+            aria-describedby="checkbox-order-dialog-error"
+            aria-invalid="false"
+            required
+          >
+          Я согласен на обработку данных
+        </label>
+        <p class="order-form__error" id="checkbox-order-dialog-error" role="alert" hidden></p>
+      </div>
+
+      <div class="order-form__actions">
+        <button class="button button--ghost" type="button" id="clear-order-form">
+          Очистить всё
+        </button>
+        <button class="button button--secondary" type="button" id="close-order-dialog">
+          Закрыть
+        </button>
+        <button class="button button--primary" type="submit" id="submit-order-dialog">
+          Отправить заявку
+        </button>
+      </div>
+    </form>
+  </dialog>
+
   <button class="scroll-top" type="button" aria-label="Наверх">
     <span class="scroll-top__icon" aria-hidden="true"></span>
   </button>
 
+  <p class="success-message" id="success-message" role="status" aria-live="polite" hidden>
+    Форма успешно отправлена!
+  </p>
+
+  <script src="js/order-form.js" defer></script>
+  <script src="js/main.js" defer></script>
   <script src="js/scroll-top.js" defer></script>
 </body>
 </html>

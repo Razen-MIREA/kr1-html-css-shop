@@ -38,6 +38,12 @@
           <li class="site-nav__item">
             <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
           </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#reviews">Отзывы</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#faq">FAQ</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -79,42 +85,24 @@
 
       <div class="products-grid">
         <article class="product-card">
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Краткое описание товара.</p>
+          <h3 class="product-card__title">Смартфон Aurora X1</h3>
+          <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 1000 руб.</p>
-          <button
-            class="button button--primary product-card__button"
-            type="button"
-            data-product="Товар 1"
-          >
-            Заказать
-          </button>
+          <a class="button button--secondary product-card__button" href="catalog.html#catalog">Подробнее</a>
         </article>
 
         <article class="product-card">
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Краткое описание товара.</p>
+          <h3 class="product-card__title">Наушники Sonic Pro</h3>
+          <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 1500 руб.</p>
-          <button
-            class="button button--primary product-card__button"
-            type="button"
-            data-product="Товар 2"
-          >
-            Заказать
-          </button>
+          <a class="button button--secondary product-card__button" href="catalog.html#catalog">Подробнее</a>
         </article>
 
         <article class="product-card">
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Краткое описание товара.</p>
+          <h3 class="product-card__title">Клавиатура Kliko 87</h3>
+          <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 2000 руб.</p>
-          <button
-            class="button button--primary product-card__button"
-            type="button"
-            data-product="Товар 3"
-          >
-            Заказать
-          </button>
+          <a class="button button--secondary product-card__button" href="catalog.html#catalog">Подробнее</a>
         </article>
       </div>
     </section>
@@ -124,16 +112,45 @@
 
       <div class="reviews-grid">
         <article class="review-card">
-          <p class="review-card__text">Отличный магазин! Быстрая доставка, товар соответствует описанию.</p>
-          <p class="review-card__author">— Анна</p>
+          <p class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+          <p class="review-card__text">
+            Заказывала смартфон Aurora X1 — привезли на следующий день после оформления.
+            Курьер предварительно позвонил, упаковка запечатана, комплект полный.
+            Аппарат полностью соответствует описанию на сайте, работает отлично.
+          </p>
+          <p class="review-card__product">Товар: Смартфон Aurora X1</p>
+          <footer class="review-card__meta">
+            <p class="review-card__author">— Анна К.</p>
+            <time class="review-card__date" datetime="2026-02-14">14.02.2026</time>
+          </footer>
         </article>
+
         <article class="review-card">
-          <p class="review-card__text">Заказывал здесь уже несколько раз, всегда всё чётко. Рекомендую!</p>
-          <p class="review-card__author">— Дмитрий</p>
+          <p class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+          <p class="review-card__text">
+            Беру здесь уже третий заказ подряд — наушники, клавиатуру и мышь.
+            Ни разу не было нареканий: цены адекватные, менеджеры на связи,
+            отвечают в чате почти мгновенно. Однозначно рекомендую.
+          </p>
+          <p class="review-card__product">Товары: Наушники Sonic Pro, Клавиатура Kliko 87</p>
+          <footer class="review-card__meta">
+            <p class="review-card__author">— Дмитрий П.</p>
+            <time class="review-card__date" datetime="2026-02-02">02.02.2026</time>
+          </footer>
         </article>
+
         <article class="review-card">
-          <p class="review-card__text">Приятные цены и вежливые менеджеры. Буду обращаться ещё.</p>
-          <p class="review-card__author">— Елена</p>
+          <p class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</p>
+          <p class="review-card__text">
+            Приятные цены и вежливые менеджеры, помогли подобрать монитор под задачи
+            дизайна. Единственное — доставку ждала чуть дольше заявленного срока,
+            но предупредили заранее. Буду обращаться ещё.
+          </p>
+          <p class="review-card__product">Товар: Монитор ViewMax 24"</p>
+          <footer class="review-card__meta">
+            <p class="review-card__author">— Елена В.</p>
+            <time class="review-card__date" datetime="2026-01-22">22.01.2026</time>
+          </footer>
         </article>
       </div>
     </section>
@@ -144,24 +161,97 @@
       <div class="faq">
         <details class="faq__item">
           <summary class="faq__question">Как оформить заказ?</summary>
-          <p class="faq__answer">Выберите товар в каталоге и нажмите кнопку «Заказать». Заполните форму, укажите контактные данные и отправьте заявку.</p>
+          <p class="faq__answer">
+            Выберите подходящий товар в каталоге и нажмите кнопку «Заказать» —
+            откроется форма оформления заявки. Укажите имя, e-mail и номер телефона
+            в формате <strong>+7 (900) 000-00-00</strong>, при желании добавьте
+            удобную дату связи, тему обращения и комментарий. Поставьте галочку
+            согласия на обработку данных и отправьте заявку — после этого менеджер
+            свяжется с вами, подтвердит наличие товара, уточнит способ оплаты
+            и договорится об удобном времени доставки.
+          </p>
         </details>
+
         <details class="faq__item">
           <summary class="faq__question">Какие способы оплаты вы принимаете?</summary>
-          <p class="faq__answer">Мы принимаем оплату банковскими картами, а также наличными при получении.</p>
+          <p class="faq__answer">
+            Сейчас доступны два варианта: оплата банковской картой (Visa,
+            Mastercard, МИР) и оплата наличными при получении заказа. Оплату
+            картой можно провести как при оформлении заявки, так и курьеру
+            при доставке — по вашему выбору. Для юридических лиц возможна
+            оплата по счёту, для этого укажите в комментарии к заявке, что вам
+            нужны реквизиты для безналичного расчёта.
+          </p>
         </details>
+
         <details class="faq__item">
-          <summary class="faq__question">Сколько стоит доставка?</summary>
-          <p class="faq__answer">Доставка по городу — 300 руб. При заказе от 5000 руб. доставка бесплатная.</p>
+          <summary class="faq__question">Сколько стоит доставка и как быстро привезут заказ?</summary>
+          <p class="faq__answer">
+            Доставка по городу стоит <strong>300 руб.</strong>, при заказе
+            от <strong>5000 руб.</strong> — бесплатно. Стандартный срок доставки
+            по городу — 1–2 рабочих дня с момента подтверждения заказа.
+            Курьер предварительно позвонит и согласует удобный интервал.
+            Если товар есть на складе и заявка оформлена до 15:00, доставку
+            часто удаётся организовать уже на следующий день. Возможен
+            и самовывоз — адрес и время согласовываются по телефону.
+          </p>
         </details>
+
         <details class="faq__item">
-          <summary class="faq__question">Можно ли вернуть товар?</summary>
-          <p class="faq__answer">Да, в течение 14 дней с момента покупки, если товар не был в использовании и сохранена упаковка.</p>
+          <summary class="faq__question">Можно ли вернуть или обменять товар?</summary>
+          <p class="faq__answer">
+            Да. Вернуть товар надлежащего качества можно в течение
+            <strong>14 дней</strong> с момента покупки при условии, что товар
+            не был в использовании, сохранены его заводская упаковка, пломбы,
+            ярлыки и полный комплект, а также есть документ, подтверждающий
+            покупку. Если обнаружен производственный дефект — обращайтесь
+            по телефону или через форму на странице «Контакты»: мы поможем
+            оформить возврат или замену, а при необходимости — гарантийный
+            ремонт. Расходы на доставку при возврате товара надлежащего
+            качества несёт покупатель.
+          </p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Можно ли изменить или отменить оформленный заказ?</summary>
+          <p class="faq__answer">
+            Да, пока заказ не передан в доставку. Свяжитесь с нами по телефону
+            или через форму обратной связи, укажите имя и номер телефона,
+            на который оформлялась заявка. Мы скорректируем состав заказа,
+            адрес доставки или время, а также при необходимости полностью
+            отменим заказ. Если посылка уже передана курьеру, отменить её
+            можно в момент получения — просто откажитесь от заказа, оплата
+            не списывается.
+          </p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Есть ли гарантия на товары?</summary>
+          <p class="faq__answer">
+            На всю технику действует гарантия производителя — обычно
+            от 12 месяцев, точный срок указан в документах к конкретной модели.
+            Гарантия распространяется на производственные дефекты и не покрывает
+            повреждения, возникшие из-за неправильной эксплуатации, попадания
+            влаги или механических ударов. Для обращения по гарантии сохраните
+            чек и упаковку — так проще подтвердить дату покупки и серийный номер.
+          </p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Как связаться с поддержкой?</summary>
+          <p class="faq__answer">
+            Позвоните по номеру <a href="tel:+79000000000">+7 (900) 000-00-00</a>
+            или напишите на <a href="mailto:info@example.com">info@example.com</a>.
+            Также можно оставить заявку через форму обратной связи на странице
+            «Контакты» — укажите тему «Консультация» и ваш вопрос в комментарии.
+            Мы отвечаем в рабочие дни с 9:00 до 19:00, обычно в течение
+            одного рабочего дня.
+          </p>
         </details>
       </div>
     </section>
 
-    <aside class="aside-info">
+    <!-- <aside class="aside-info">
       <h2>Информация для студентов</h2>
       <p>
         На следующих практических занятиях этот проект будет расширяться:
@@ -169,122 +259,13 @@
         БЭМ-структура и адаптивная версия сайта.
       </p>
     </aside>
-  </main>
+  </main> -->
 
   <footer id="contacts">
     <p>&copy; 2026 Учебный проект. Все права защищены.</p>
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
 
-  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
-
-    <form class="order-form" id="order-form" action="#" method="post" novalidate>
-      <input id="selected-product" name="selected-product" type="hidden">
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-name">Имя</label>
-        <input
-          class="order-form__input"
-          id="order-name"
-          name="name"
-          type="text"
-          autocomplete="name"
-          required
-        >
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-email">E-mail</label>
-        <input
-          class="order-form__input"
-          id="order-email"
-          name="email"
-          type="email"
-          autocomplete="email"
-          required
-        >
-      </div>
-
-      <div class="order-form__field">
-        <!-- ИСПРАВЛЕНО: for="order-phone" вместо order-email -->
-        <label class="order-form__label" for="order-phone">Телефон</label>
-        <input
-          class="order-form__input"
-          id="order-phone"
-          name="phone"
-          type="tel"
-          inputmode="tel"
-          autocomplete="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-          required
-        >
-      </div>
-
-      <div class="form-field">
-        <label for="order-date">Дата связи</label>
-        <input
-          class="order-form__input"
-          id="order-date"
-          name="date"
-          type="date"
-        >
-      </div>
-
-      <div class="form-field">
-        <label for="order-topic">Тема заявки</label>
-        <select id="order-topic" name="topic" required>
-          <option value="">Выберите тему</option>
-          <option value="product">Заказ товара</option>
-          <option value="consultation">Консультация</option>
-          <option value="delivery">Доставка</option>
-        </select>
-      </div>
-
-      <div class="form-field">
-        <label for="order-comment">Комментарий</label>
-        <textarea
-          class="order-form__input"
-          id="order-comment"
-          name="comment"
-          rows="4"
-          placeholder="Укажите дополнительную информацию"
-        ></textarea>
-      </div>
-
-      <div class="form-field form-field--checkbox">
-        <label>
-          <input
-            id="order-agreement"
-            name="agreement"
-            type="checkbox"
-            required
-          >
-          Я согласен на обработку данных
-        </label>
-      </div>
-
-      <div class="order-form__actions">
-        <button class="button button--secondary" type="button" id="close-order-dialog">
-          Закрыть
-        </button>
-        <button class="button button--primary" type="submit" id="submit-order-dialog">
-          Отправить заявку
-        </button>
-      </div>
-    </form>
-  </dialog>
-  
-  <button class="scroll-top" type="button" aria-label="Наверх">
-    <span class="scroll-top__icon" aria-hidden="true"></span>
-  </button>
-
-  <p class="success-message" id="success-message" role="status" aria-live="polite" hidden>
-    Форма успешно отправлена!
-  </p>
-
-  <!-- ИСПРАВЛЕНО: единый относительный путь к скриптам -->
   <script src="js/faq.js" defer></script>
   <script src="js/scroll-top.js" defer></script>
 </body>
